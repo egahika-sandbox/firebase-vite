@@ -6,10 +6,6 @@ declare module 'vue' {
     'AkarIcons:check': typeof import('virtual:vite-icons/akar-icons/check')['default']
     'AkarIcons:clipboard': typeof import('virtual:vite-icons/akar-icons/clipboard')['default']
     CarbonCampsite: typeof import('virtual:vite-icons/carbon/campsite')['default']
-    CarbonLogoGithub: typeof import('virtual:vite-icons/carbon/logo-github')['default']
-    CarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
-    CarbonPedestrian: typeof import('virtual:vite-icons/carbon/pedestrian')['default']
-    CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
   }
 }
 
