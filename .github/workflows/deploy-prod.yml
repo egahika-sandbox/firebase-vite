@@ -12,9 +12,21 @@ jobs:
   deploy_live_website:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Add any build steps here. For example:
-      # - run: npm ci && npm run build
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+      - name: Build
+        id: build
+        run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
