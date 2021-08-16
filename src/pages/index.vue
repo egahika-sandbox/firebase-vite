@@ -2,6 +2,8 @@
 import firebase from 'firebase'
 import { useAuth } from '@vueuse/firebase'
 import { set, useClipboard, useSessionStorage } from '@vueuse/core'
+import aspida from '@aspida/axios'
+import api from '../../api/$api'
 
 const { isAuthenticated, user } = useAuth(firebase.auth)
 
@@ -25,7 +27,10 @@ const logout = async() => {
 const toBlank = (v: null | undefined | string) => v ?? ''
 const toAny = (v: any) => v
 
+const client = api(aspida())
+
 const fn = async() => {
+  await client.store.inventory.$get()
 }
 </script>
 
