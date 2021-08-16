@@ -5,7 +5,7 @@ import Pages from 'vite-plugin-pages'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import WindiCSS from 'vite-plugin-windicss'
-import ViteAspida from './vite-plugin-aspida'
+import ViteAspida from 'vite-plugin-aspida'
 
 export default defineConfig({
   resolve: {
